@@ -3,7 +3,6 @@
   hosts: [demo]
   user: ansible
   become: yes
-  connection:ssh
   tasks:
   - name: apt update
     command: apt update
