@@ -17,6 +17,12 @@ pipeline {
         echo 'Build and Package App'
         sh 'mvn clean package'
             }
+    }   
+    stage('Publish Reports using HTML')
+      steps {
+        echo 'Publishing the HTML Reports'
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insurance Project', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            }
     }        
-}    
+}   
 }
