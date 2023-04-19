@@ -1,7 +1,6 @@
 ---
 - name: Configure Docker on other EC2 instance
   hosts: [demo]
-  user: ansible
   become: yes
   tasks:
   - name: apt update
