@@ -45,6 +45,6 @@ pipeline {
       steps {
         ansiblePlaybook credentialsId: 'Ansible-Login', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-deploy.yml'
             }
-    }        
+    }       
 }
 }   
