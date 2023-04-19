@@ -28,6 +28,14 @@ pipeline {
     steps {
       sh 'docker build -t harshitreddy/insurance-project1:latest .'
           }
-    }      
+    }   
+    stage('Docker Login') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'Docker-Login', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+        sh "docker login -u ${env.dockerHubUser} -p ${env.dcokerHubPassword}" 
+                    }
+            }
+    }        
+}
 }   
 }
