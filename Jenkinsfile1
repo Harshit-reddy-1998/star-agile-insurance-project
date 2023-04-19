@@ -35,6 +35,11 @@ pipeline {
         sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}" 
                     }
             }
+    }     
+    stage('Push Image to Docker Registory') {
+      steps {
+        sh 'docker push harshitreddy/insurance-project1:latest'
+            }
     }        
 }
 }   
