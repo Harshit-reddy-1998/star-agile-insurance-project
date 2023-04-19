@@ -23,6 +23,11 @@ pipeline {
       echo 'Publishing the HTML Reports'
       publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insurance-Project', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
           }
+    }    
+    stage('Image Creation') {
+    steps {
+      sh 'docker build -t harshitreddy/Insurance-project1 .'
+          }
     }      
 }   
 }
