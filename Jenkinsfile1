@@ -12,5 +12,11 @@ pipeline {
         git 'https://github.com/Harshit-reddy-1998/star-agile-insurance-project.git'
             }
     }
-    }
-    }
+    stage('Build and Package Application') {
+      steps {
+        echo 'Build and Package App'
+        sh 'mvn clean package'
+            }
+    }        
+}    
+}
