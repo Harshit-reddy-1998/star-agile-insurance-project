@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+
+  tools {
+    maven 'M2_HOME'
+    }
+  
+  stages {
+    stage('CheckOut') {
+      steps {
+        echo 'Checkout the source code from GitHub'
+        git 'https://github.com/Sanumouni/star-agile-insurance-project.git'
+            }
+    }
+    }
+    }
